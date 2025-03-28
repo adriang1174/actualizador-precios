@@ -1,0 +1,145 @@
+/**
+ * Estilos personalizados para el Actualizador de Precios Factusol
+ */
+
+/* Variables de colores personalizados */
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #6a5feb;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --border-radius: 0.5rem;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fb;
+    color: #495057;
+}
+
+.navbar-dark.bg-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+}
+
+.card {
+    border-radius: var(--border-radius);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+/* Icono de feature con gradiente */
+.feature-icon {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+/* Estilos para la página de inicio */
+.display-5 {
+    font-weight: 600;
+}
+
+/* Personalización de inputs y selects */
+.form-control:focus, .form-select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(106, 95, 235, 0.25);
+}
+
+/* Personalización de tablas */
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: rgba(67, 97, 238, 0.05);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(67, 97, 238, 0.08);
+}
+
+/* Personalización de paginación */
+.page-link {
+    color: var(--primary-color);
+}
+
+.page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Estilos para modales */
+.modal-header {
+    background-color: var(--light-color);
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* Animación para el spinner de carga */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner-border {
+    animation: spin 1s linear infinite;
+}
+
+/* Estilos para el footer */
+footer {
+    border-top: 1px solid #e9ecef;
+}
+
+/* Estilos para badges */
+.badge {
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+}
+
+/* Personalización de progress bar */
+.progress {
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+/* Personalización para dispositivos móviles */
+@media (max-width: 768px) {
+    .feature-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
+    }
+    
+    h3.card-title {
+        font-size: 1.25rem;
+    }
+}
