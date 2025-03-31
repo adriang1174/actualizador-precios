@@ -23,7 +23,7 @@ Driver = FreeTDS
 Description = MS Access Database
 Server = localhost
 Port = 1433
-Database = tu_base_de_datos
+Database = factusol
 EOF'
 
 # Habilitar extensión PDO_ODBC en PHP
