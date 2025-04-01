@@ -1,0 +1,35 @@
+# Configuración Apache para Actualizador de Precios Factusol
+# 
+# Este archivo configura el servidor Apache para permitir
+# URLs amigables y redireccionar todas las solicitudes
+# al archivo index.php para el enrutamiento de la aplicación.
+
+# Activar el motor de reescritura
+RewriteEngine On
+
+# Si la solicitud no es para un archivo o directorio existente
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirigir todas las solicitudes a index.php
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Impedir el acceso a archivos y directorios sensibles
+<FilesMatch "^\.htaccess|composer\.json|README\.md|composer\.lock">
+  Order Allow,Deny
+  Deny from all
+</FilesMatch>
+
+# Impedir listado de directorios
+Options -Indexes
+
+# Configuración PHP específica para este directorio
+php_flag display_errors off
+php_value max_execution_time 300
+php_value memory_limit 256M
+php_value post_max_size 20M
+php_value upload_max_filesize 20M
+
+# Forzar HTTPS (descomenta si es necesario)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

@@ -3,6 +3,10 @@
 {
 	"name": "PHP con soporte PDO_ODBC",
 	"image": "mcr.microsoft.com/devcontainers/php:latest",
+	 // Use 'forwardPorts' to make a list of ports inside the container available locally.
+	 "forwardPorts": [
+		8080
+	  ],
 	"features": {},
 	"postCreateCommand": "sudo apt-get update && sudo apt-get install -y unixodbc unixodbc-dev odbc-postgresql && sudo docker-php-ext-install pdo_odbc && bash .devcontainer/setup-odbc.sh",
 	"customizations": {
